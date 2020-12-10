@@ -1,0 +1,86 @@
+include header1
+include aside
+.content-wrapper
+    section.content
+        .container-fluid
+            include sub-header
+            // general form elements
+            .card.card-primary
+                .card-header
+                    h3.card-title Add Product Details
+                // /.card-header
+                // form start
+                #form.card-body
+                    .row
+                        .form-group.col-6
+                            label(for='product_name') Product Name
+                            |                     
+                            input#product_name.form-control(type='text' placeholder='Enter Product Name' required)
+                            p#product_name_error(style='color:red')
+                        |                   
+                        .form-group.col-3
+                            label(for='product_actual_price') Actual Price
+                            |                     
+                            input#product_actual_price.form-control(type='number' placeholder='Enter Actual Price' required)
+                            p#product_actual_price_error(style='color:red')
+                        |                   
+                        .form-group.col-3
+                            label(for='product_selling_price') Selling Price
+                            |                     
+                            input#product_selling_price.form-control(type='number' placeholder='Enter Selling Price' required)
+                            p#product_selling_price_error(style='color:red')
+                        |                   
+                    .row    
+                        .form-group.col-6
+                            label(for='product_quantity') Product Quantity
+                            |                     
+                            input#product_quantity.form-control(type='number' placeholder='Enter Product Quantity' required)
+                            p#product_quantity_error(style='color:red')
+                        |                   
+                        .form-group.col-6
+                            label(for='product_size') Size
+                            |                     
+                            input#product_size.form-control(type='text' placeholder='Enter Product Size' required)
+                            p#product_size_error(style='color:red')
+                        |                   
+                    .row    
+                        .form-group.col-6
+                            label(for='product_category') Product Category
+                            |                     
+                            select#product_category.form-control(type='text' onchange='getSubCategory()' required)
+                                option(value="" disabled selected) Select Category
+                            p#product_category_error(style='color:red')
+                        |                   
+                        .form-group.col-6
+                            label(for='product_sub_category') Sub Category
+                            |                     
+                            select#product_sub_category.form-control(type='text' required)
+                                option(value="" disabled selected) Select Sub Category
+                            p#product_sub_categorye_error(style='color:red')
+                        |                   
+                    .row
+                        .form-group.col-12
+                            label(for='product_desc') Product Description
+                            |                     
+                            textarea#product_desc.form-control(type='text' placeholder="Enter Product Description Here..." required)
+                            p#product_desc_error(style='color:red')
+                        |                   
+                    //- .form-group.col-12
+                        label(for='exampleInputFile') File input
+                        |                     
+                        .input-group
+                            .custom-file.col-
+                                input#exampleInputFile.custom-file-input(type='file')
+                                |                         
+                                label.custom-file-label(for='exampleInputFile') Choose file
+                            |                       
+                        .input-group-append.col-4
+                            span.input-group-text Upload
+                    // /.card-body
+                .card-footer
+                    .float-right
+                        button.btn.btn-warning.mr-2(onclick="reset()") Reset
+                        button.btn.btn-primary(onclick="addProduct()") Submit
+
+include footer
+script(src='/js/product-add.js')

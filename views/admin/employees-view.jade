@@ -1,0 +1,49 @@
+include header1
+include aside
+.content-wrapper
+    section.content
+        .container-fluid
+            include sub-header
+            .card.card-solid
+                .card-body.pb-0
+                    .row.d-flex.align-items-stretch
+                        -for(var i=0; i<length; i++){
+                            .col-12.col-sm-6.col-md-4.d-flex.align-items-stretch
+                                .card.bg-light
+                                    .card-header.text-muted.border-bottom-0 #{dataset[i].employee_role}
+                                    |                 
+                                    .card-body.pt-0
+                                        .row
+                                            .col-7
+                                                h2.lead
+                                                    b #{dataset[i].employee_name}
+                                                |                       
+                                                p.text-muted.text-sm
+                                                    b Username: #{dataset[i].employee_username}
+                                                p.text-muted.text-sm
+                                                    b CNIC: #{dataset[i].employee_cnic}
+                                                p.text-muted.text-sm
+                                                    b DOB: #{dataset[i].employee_dob}
+                                                ul.ml-4.mb-0.fa-ul.text-muted
+                                                    li.small
+                                                        span.fa-li
+                                                            i.fas.fa-lg.fa-building
+                                                        |  Address: #{dataset[i].employee_address}
+                                                        |                         
+                                                    li.small
+                                                        span.fa-li
+                                                            i.fas.fa-lg.fa-phone
+                                                        |  Phone #: #{dataset[i].employee_contact}
+                                                |                     
+                                            .col-5.text-center
+                                                img.img-circle.img-fluid(src='/images/dp/employee/#{dataset[i].employee_username}.jpg' alt='user-avatar')
+                                    .card-footer
+                                        .text-right
+                                            a.btn.btn-sm.bg-teal(href='#')
+                                                i.fas.fa-comments
+                                            | &nbsp;     
+                                            a.btn.btn-sm.btn-primary(href='#')
+                                                i.fas.fa-user View Profile
+                        -}
+
+include footer

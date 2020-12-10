@@ -1,0 +1,55 @@
+.row
+    .col-md-8.border-right
+        .card.card-primary.card-outline
+            .card-header
+                h4.card-title Items
+            .card-body
+                table#myTable.table.table-hover.text-nowrap
+                    thead
+                        tr
+                            th Sr.
+                            th Prod ID
+                            th Name
+                            th Unit Price
+                            th Quantity
+                            th Sub Total
+                            th Remove
+                    tbody
+                        -for(var i = 0; i <temp_order.length; i++){
+                            tr
+                                td #{i+1}
+                                td #{temp_order[i].product_id}
+                                td #{temp_order[i].product_name}
+                                td #{temp_order[i].unit_price}
+                                td #{temp_order[i].quantity}
+                                td #{temp_order[i].sub_total}
+                                td.text-center 
+                                    button(onclick="deleteRow('#{temp_order[i].temp_order_id}')").fa.fa-remove.btn.btn-danger
+                        -}
+    .col-md-4
+        .sticky-top.mb-3
+            .card.card-primary.card-outline
+                .card-header
+                    h4.card-title Bill
+                .card-body
+                    .table-responsive
+                        table.table
+                            tr
+                                th(style="width:50%") Subtotal:
+                                -if(total == null){
+                                    td 0
+                                -}
+                                -else if(total != null){
+                                    td #{total}
+                                -}
+                            tr
+                                th Tax (9.3%)
+                                td 
+                            tr
+                                th Total:
+                                -if(total == null){
+                                    td 0
+                                -}
+                                -else if(total != null){
+                                    td #{total}
+                                -}

@@ -1,0 +1,70 @@
+include header1
+include aside
+.content-wrapper
+    section.content
+        .container-fluid
+            //include sub-header
+            .row.mb-2
+                .col-sm-2.border-right
+                    h2 #{title}
+                .col-sm-10
+                    .row.mb-2
+                        .col-sm-6
+                            .input-group
+                                input#newCategory.form-control(type='text' placeholder='Enter New Category')
+                                span.input-group-btn
+                                    button.btn.btn-default(onclick='addNewCategory()') Add
+                                        i.fa.fa-plus
+                            #newCategoryError(style = 'color:red')
+            hr
+            .col-sm-6
+                .input-group
+                    select#category.form-control.col-sm-4
+                        option(value = "" disabled selected) Select Category
+                    input#newSubCategory.form-control.col-sm-8(type='text' placeholder='Enter New Sub Category')
+                    span.input-group-btn
+                        button.btn.btn-default(onclick='addNewSubCategory()') Add
+                            i.fa.fa-plus
+                #newSubCategoryError(style='color:red')
+            //- .row.mb-2
+                .col-sm-4.border-right
+                    .input-group
+                        input#newCategory.form-control(type='text' placeholder='Enter New Category')
+                        span.input-group-btn
+                            button.btn.btn-default(onclick='addNewCategory()') Add
+                                i.fa.fa-plus
+                        #newCategoryError
+                .col-sm-8
+                    .input-group
+                        select.form-control.col-sm-3
+                            -for(var j = 0; j <categories.length; j++){
+                                option #{categories[j].category}
+                            -}
+                        input#newCategory.form-control.col-sm-4(type='text' placeholder='Enter New Sub Category')
+                        span.input-group-btn
+                            button.btn.btn-default(onclick='addNewCategory()') Add
+                                i.fa.fa-plus
+                        #newCategoryError
+            hr
+            .row#rowDiv
+                //- -for(var i = 0; i <categories.length; i++){
+                //-     .col-md-3
+                //-         .card
+                //-             .card-header
+                //-                 h3.card-title #{categories[i].category}
+                //-                 |                 
+                //-                 .card-tools
+                //-                     button.btn.btn-tool(type='button' data-card-widget='collapse')
+                //-                         i.fas.fa-minus
+                //-             |               
+                //-             .card-body.p-0
+                //-                 ul.nav.nav-pills.flex-column
+                //-                     -for(var j = 0; j <sub_categories.length; j++){
+                //-                         -if(categories[i].category_id == sub_categories[j].category_id){
+                //-                             li.nav-item.active
+                //-                                 a.nav-link(href='#') #{sub_categories[j].sub_category}
+                //-                         -}
+                //-                     -}
+                //- -}
+include footer
+script(src='/js/categories.js')

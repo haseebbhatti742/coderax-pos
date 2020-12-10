@@ -1,0 +1,102 @@
+aside.main-sidebar.sidebar-dark-primary.elevation-4
+    // Brand Logo
+    a.brand-link(href='index3.html')
+        img.brand-image.img-circle.elevation-3(src='/images/logo.png' alt='AdminLTE Logo' style='opacity: .8')
+        |       
+        span.brand-text.font-weight-light CODERAX
+    // Sidebar
+    .sidebar
+        // Sidebar user panel (optional)
+        .user-panel.mt-3.pb-3.mb-3.d-flex
+            .image
+                img.img-circle.elevation-2(src='/images/dp/admin/#{session.username}.jpg' alt='User Image')
+                |         
+                .info
+                    a.d-block(href='#') #{session.fullname}
+        // SidebarSearch Form
+        .form-inline
+            .input-group(data-widget='sidebar-search')
+                input.form-control.form-control-sidebar(type='search' placeholder='Search' aria-label='Search')
+                |           
+                .input-group-append
+                    button.btn.btn-sidebar
+                        i.fas.fa-search.fa-fw
+        // Sidebar Menu
+        nav.mt-2
+            ul.nav.nav-pills.nav-sidebar.flex-column(data-widget='treeview' role='menu' data-accordion='false')
+                li.nav-item.menu-open
+                    if title == "Dashboard"
+                        a.nav-link.active(href='/admin/')
+                            i.nav-icon.fas.fa-tachometer-alt
+                            p Dashboard
+                    else
+                        a.nav-link(href='/admin/')
+                            i.nav-icon.fas.fa-tachometer-alt
+                            p Dashboard
+                li.nav-item
+                    if title == "Products"
+                        a.nav-link.active(href='#')
+                            i.fa.fa-product-hunt.fa-lg &nbsp;
+                            p Products
+                                i.fas.fa-angle-left.right
+                        ul.nav.nav-treeview
+                            li.nav-item
+                                a.nav-link(href='/admin/products/add')
+                                    i.fa.fa-plus-circle &nbsp;
+                                    p Add Product   
+                            li.nav-item
+                                a.nav-link(href='/admin/products/view')
+                                    i.fa.fa-list-alt &nbsp;
+                                    p View Products
+                    else
+                        a.nav-link(href='#')
+                            i.fa.fa-product-hunt.fa-lg &nbsp;
+                            p Products
+                                i.fas.fa-angle-left.right
+                        ul.nav.nav-treeview
+                            li.nav-item
+                                a.nav-link(href='/admin/products/add')
+                                    i.fa.fa-plus-circle &nbsp;
+                                    p Add Product
+                            li.nav-item
+                                a.nav-link(href='/admin/products/view')
+                                    i.fa.fa-list-alt &nbsp;
+                                    p View Products
+                li.nav-item    
+                    if title == "Categories"
+                        a.nav-link.active(href='/admin/categories')
+                            i.nav-icon.fas.fa-copy
+                            p Categories
+                    else
+                        a.nav-link(href='/admin/categories')
+                            i.nav-icon.fas.fa-copy
+                            p Categories
+                li.nav-item
+                    if title == "Employees"
+                        a.nav-link.active(href='#')
+                            i.fa.fa-user.nav-icon
+                            p Employees
+                                i.right.fas.fa-angle-left
+                        ul.nav.nav-treeview
+                            li.nav-item
+                                a.nav-link(href='/admin/employees/add')
+                                    i.fa.fa-plus-circle &nbsp;
+                                    p Add Employee
+                            li.nav-item
+                                a.nav-link(href='/admin/employees/view')
+                                    i.fa.fa-list-alt &nbsp;
+                                    p View Employees
+                    else
+                        a.nav-link(href='#')
+                            i.fa.fa-user.nav-icon
+                            p Employees
+                                i.right.fas.fa-angle-left
+                        ul.nav.nav-treeview
+                            li.nav-item
+                                a.nav-link(href='/admin/employees/add')
+                                    i.fa.fa-plus-circle &nbsp;
+                                    p Add Employee
+                            li.nav-item
+                                a.nav-link(href='/admin/employees/view')
+                                    i.fa.fa-list-alt &nbsp;
+                                    p View Employees

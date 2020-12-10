@@ -1,0 +1,26 @@
+include header1
+include aside
+.content-wrapper
+    section.content
+        .container-fluid
+            include sub-header
+            .col-md-12
+                .card.card-primary.card-outline
+                    .card-header
+                        h3.card-title New Purchase
+                        .card-tools
+                            .input-group.input-group-md
+                                input#product_id.form-control(type = "text", Placeholder = "Enter Product ID", autofocus)
+                                .input-group-append
+                                    button#addItemButton.btn.btn-primary(onclick="addItem()")
+                                        i.fas.fa-plus
+                            #product_id_error(style="color:red")
+                    .card-body.p-2.mt-2
+                        #demo
+                            
+
+include footer
+script(src='/js/home.js')
+script(src='../../firebase.js')
+script(src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js")
+script(src="https://www.gstatic.com/firebasejs/7.22.0/firebase-analytics.js")

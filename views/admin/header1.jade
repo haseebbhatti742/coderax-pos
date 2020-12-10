@@ -1,0 +1,157 @@
+head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title Admin | #{title}
+    // Google Font: Source Sans Pro
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback')
+    // Font Awesome
+    link(rel='stylesheet' href='/plugins/fontawesome-free/css/all.min.css')
+    // Ionicons
+    link(rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+    // Tempusdominus Bootstrap 4
+    link(rel='stylesheet' href='/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')
+    // iCheck
+    link(rel='stylesheet' href='/plugins/icheck-bootstrap/icheck-bootstrap.min.css')
+    // JQVMap
+    link(rel='stylesheet' href='/plugins/jqvmap/jqvmap.min.css')
+    // Theme style
+    link(rel='stylesheet' href='/css/adminlte.css')
+    // overlayScrollbars
+    link(rel='stylesheet' href='/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')
+    // Daterange picker
+    link(rel='stylesheet' href='/plugins/daterangepicker/daterangepicker.css')
+    // summernote
+    link(rel='stylesheet' href='/plugins/summernote/summernote-bs4.min.css')
+    link(rel='icon' href='/images/logo.png')
+body.hold-transition.sidebar-mini.layout-fixed
+    .wrapper
+        // Navbar
+        nav.main-header.navbar.navbar-expand.navbar-white.navbar-light
+            // Left navbar links
+            ul.navbar-nav
+                li.nav-item
+                    a.nav-link(data-widget='pushmenu' href='#' role='button')
+                        i.fas.fa-bars
+                |       
+                li.nav-item.d-none.d-sm-inline-block
+                    a.nav-link(href='index3.html') Home
+                |       
+                li.nav-item.d-none.d-sm-inline-block
+                    a.nav-link(href='#') Contact
+            // SEARCH FORM
+            form.form-inline.ml-3
+                .input-group.input-group-sm
+                    input.form-control.form-control-navbar(type='search' placeholder='Search' aria-label='Search')
+                    |         
+                    .input-group-append
+                        button.btn.btn-navbar(type='submit')
+                            i.fas.fa-search
+            // Right navbar links
+            ul.navbar-nav.ml-auto
+                // Messages Dropdown Menu
+                li.nav-item.dropdown
+                    a.nav-link(data-toggle='dropdown' href='#')
+                        i.far.fa-comments
+                        |           
+                        span.badge.badge-danger.navbar-badge 3
+                    |         
+                    .dropdown-menu.dropdown-menu-lg.dropdown-menu-right
+                        a.dropdown-item(href='#')
+                            // Message Start
+                            .media
+                                img.img-size-50.mr-3.img-circle(src='/images/user1-128x128.jpg' alt='User Avatar')
+                                |               
+                                h3.dropdown-item-title
+                                    | Brad Diesel
+                                    span.float-right.text-sm.text-danger
+                                        i.fas.fa-star
+                                    |                 
+                                    p.text-sm Call me whenever you can...
+                                    |                 
+                                    p.text-sm.text-muted
+                                        i.far.fa-clock.mr-1
+                                        |  4 Hours Ago
+                        .dropdown-divider
+                            |           
+                        a.dropdown-item(href='#')
+                            // Message Start
+                            .media
+                                img.img-size-50.img-circle.mr-3(src='/images/user8-128x128.jpg' alt='User Avatar')
+                                |               
+                                .media-body
+                                    h3.dropdown-item-title
+                                        | John Pierce
+                                        span.float-right.text-sm.text-muted
+                                            i.fas.fa-star
+                                    |                 
+                                    p.text-sm I got your message bro
+                                    |                 
+                                    p.text-sm.text-muted
+                                        i.far.fa-clock.mr-1
+                                        |  4 Hours Ago
+                            // Message End
+                            |           
+                        .dropdown-divider
+                            |           
+                        a.dropdown-item(href='#')
+                            // Message Start
+                            .media
+                                img.img-size-50.img-circle.mr-3(src='/images/user3-128x128.jpg' alt='User Avatar')
+                                |               
+                                .media-body
+                                    h3.dropdown-item-title
+                                        | Nora Silvester
+                                        span.float-right.text-sm.text-warning
+                                            i.fas.fa-star
+                                    |                 
+                                    p.text-sm The subject goes here
+                                    |                 
+                                    p.text-sm.text-muted
+                                        i.far.fa-clock.mr-1
+                                        |  4 Hours Ago
+                            // Message End
+                            |           
+                        .dropdown-divider
+                            |           
+                        a.dropdown-item.dropdown-footer(href='#') See All Messages
+                // Notifications Dropdown Menu
+                li.nav-item.dropdown
+                    a.nav-link(data-toggle='dropdown' href='#')
+                        i.far.fa-bell
+                        |           
+                        span.badge.badge-warning.navbar-badge 15
+                    |         
+                    .dropdown-menu.dropdown-menu-lg.dropdown-menu-right
+                        span.dropdown-item.dropdown-header 15 Notifications
+                        |           
+                        .dropdown-divider
+                        |           
+                        a.dropdown-item(href='#')
+                            i.fas.fa-envelope.mr-2
+                            |  4 new messages
+                            |             
+                            span.float-right.text-muted.text-sm 3 mins
+                        |           
+                        .dropdown-divider
+                        |           
+                        a.dropdown-item(href='#')
+                            i.fas.fa-users.mr-2
+                            |  8 friend requests
+                            |             
+                            span.float-right.text-muted.text-sm 12 hours
+                        |           
+                        .dropdown-divider
+                        |           
+                        a.dropdown-item(href='#')
+                            i.fas.fa-file.mr-2
+                            |  3 new reports
+                            |             
+                            span.float-right.text-muted.text-sm 2 days
+                        |           
+                        .dropdown-divider
+                        |           
+                        a.dropdown-item.dropdown-footer(href='#') See All Notifications
+                        |       
+                li.nav-item
+                    a.btn.btn-danger.btn-sm(href='/admin/logout/')
+                        span.glyphicon.glyphicon-log-out Sign Out

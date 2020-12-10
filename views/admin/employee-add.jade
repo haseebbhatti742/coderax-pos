@@ -1,0 +1,77 @@
+include header1
+include aside
+.content-wrapper
+    section.content
+        .container-fluid
+            include sub-header
+            // general form elements
+            .card.card-primary
+                .card-header
+                    h3.card-title Add Employee Details
+                // /.card-header
+                // form start
+                #form.card-body
+                    .row
+                        .form-group.col-6
+                            label(for='name') Employee Name
+                            input#name.form-control(type='text' placeholder='Enter Employee Name' required)
+                            p#name_error(style='color:red')
+                        |                   
+                        .form-group.col-3
+                            label(for='cnic') Employee CNIC
+                            input#cnic.form-control(type='text' placeholder='Enter CNIC' required)
+                            p#cnic_price_error(style='color:red')
+                        |                   
+                        .form-group.col-3
+                            label(for='contact') Employee Contact
+                            input#contact.form-control(type='text' placeholder='Enter Contact' required)
+                            p#contact_error(style='color:red')
+                        |                   
+                    .row    
+                        .form-group.col-3
+                            label(for='dob') Date Of Birth
+                            input#dob.form-control(type='date' placeholder='Enter Date Of Birth' required)
+                            p#dob_error(style='color:red')
+                        |                   
+                        .form-group.col-3
+                            label(for='role') Role
+                            select#role.form-control(type='text' placeholder='Enter Product Size' required)
+                                option(value='' disabled selected) Select role
+                                option(value="Saleperson") Saleperson
+                            p#role_error(style='color:red')
+                        |                   
+                        .form-group.col-3
+                            label(for='username') Username
+                            input#username.form-control(type='text' placeholder='Enter Username' required)
+                            p#usernameerror(style='color:red')
+                        |                   
+                        .form-group.col-3
+                            label(for='password') Paswword
+                            input#password.form-control(type='text' placeholder='Enter Paswword' required)
+                            p#password_error(style='color:red')
+                        |                   
+                    .row
+                        .form-group.col-12
+                            label(for='address') Employee Address
+                            textarea#address.form-control(type='text' placeholder="Enter Employee Address Here..." required)
+                            p#address_error(style='color:red')
+                        |                   
+                    //- .form-group.col-12
+                        label(for='exampleInputFile') File input
+                        |                     
+                        .input-group
+                            .custom-file.col-
+                                input#exampleInputFile.custom-file-input(type='file')
+                                |                         
+                                label.custom-file-label(for='exampleInputFile') Choose file
+                            |                       
+                        .input-group-append.col-4
+                            span.input-group-text Upload
+                    // /.card-body
+                .card-footer
+                    .float-right
+                        button.btn.btn-warning.mr-2(onclick="reset()") Reset
+                        button.btn.btn-primary(onclick="addProduct()") Submit
+
+include footer
+script(src='/js/employee-add.js')

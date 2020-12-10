@@ -1,0 +1,85 @@
+include header1
+include aside
+.content-wrapper
+    section.content
+        .container-fluid
+            include sub-header
+            .row
+                -if(length == 0){
+                    h2 No Product Available
+                -}
+                -else{
+                    -for(var i=0; i<length; i++){
+                        .col-md-4
+                            // Widget: user widget style 1
+                            .card.card-widget.widget-user
+                                // Add the bg color to the header using any of the bg-* classes
+                                .widget-user-header.bg-info
+                                    .row
+                                        h5.widget-user-desc(style="background-color:#413e3e") #{dataset[i].product_name} &nbsp;&nbsp;
+                                        -if(dataset[i].product_status == 'available'){
+                                            a.btn.btn-success.widget-user-desc.ml-auto #{dataset[i].product_status}
+                                        -}
+                                        -else{
+                                            a.btn.btn-danger.widget-user-desc.ml-auto #{dataset[i].product_status}
+                                        -}
+                                    h15.widget-user-desc.float-left #{dataset[i].product_desc}
+                                //- .widget-user-image
+                                    img.img-circle.elevation-2(src='/images/user1-128x128.jpg', alt='User Avatar')
+                                    |               
+                                .card-footer
+                                    .row
+                                        .col-sm-3.border-right
+                                            .description-block
+                                                h5.description-header Selling Price
+                                                |                       
+                                                span.description-text #{dataset[i].product_selling_price}
+                                            // /.description-block
+                                        // /.col
+                                        .col-sm-3.border-right
+                                            .description-block
+                                                h5.description-header Actual Price
+                                                |                       
+                                                span.description-text #{dataset[i].product_actual_price}
+                                            // /.description-block
+                                        // /.col
+                                        .col-sm-3
+                                            .description-block
+                                                h5.description-header Size
+                                                |                       
+                                                span.description-text #{dataset[i].product_size}
+                                            // /.description-block
+                                        // /.col
+                                        .col-sm-3
+                                            .description-block
+                                                h5.description-header Quantity
+                                                |                       
+                                                span.description-text #{dataset[i].product_quantity}
+                                            // /.description-block
+                                        // /.col
+                                    // /.row
+                            // /.widget-user
+                    -}
+                -}
+
+                //- -if(length == 0){
+                //-     h2 No Product Available
+                //- -}
+                //- -else{
+                //-     -for(var i=0; i<length; i++){                
+                //-         .col-lg-3.col-6
+                //-             .small-box.bg-info
+                //-                 .inner
+                //-                     h5.text-wrap #{dataset[i].product_name}
+                //-                     p #{dataset[i].product_selling_price}
+                //-                     p #{dataset[i].product_actual_price}
+                //-                     p #{dataset[i].product_size}
+                //-                     p #{dataset[i].product_status}
+                //-                 .icon
+                //-                     i.ion.ion-bag
+                //-                 a.small-box-footer(href="#") Edit &nbsp;
+                //-                     i.fas.fa-arrow-circle-right
+                //-     -}
+                //- -}
+                            
+include footer
